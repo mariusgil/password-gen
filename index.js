@@ -26,7 +26,23 @@ function generateRandomPasswordTwo() {
     }
     return passwordTwoEl.textContent = randomPasswordTwo
 } 
+function copyToClipboard(){
+    let copiedText = document.getElementById("passwordOne-el")
+    copiedText = passwordOneEl.textContent
+    navigator.clipboard.writeText(copiedText)
+    alert("Copied Text: " + copiedText)
+}
+
+function copyToClipboard2(){
+    let copiedText2 = document.getElementById("passwordTwo-el")
+    copiedText2 = passwordTwoEl.textContent
+    navigator.clipboard.writeText(copiedText2)
+    alert("Copied Text: " + copiedText2)
+}
 
 button.addEventListener("click", generateRandomPasswordOne)
 button.addEventListener("click", generateRandomPasswordTwo)
+passwordOneEl.addEventListener("click", copyToClipboard)
+passwordTwoEl.addEventListener("click", copyToClipboard2)
+
 
